@@ -15,14 +15,14 @@
 	};
 
 	$(function() {
-		$.get( "../../theme", function( data ) {
+		$.get( "/services/theme", function( data ) {
 			var themesheet = $('<link href="'+themes[data.trim()]+'" rel="stylesheet" />');
 			themesheet.appendTo('head');
 		    $('.theme-link').click(function(){
 		    	var themeName = $(this).attr('data-theme');
 		        var themeUrl = themes[$(this).attr('data-theme')];
 		        themesheet.attr('href',themeUrl);
-		        $.get( "../../theme?name=" + themeName);
+		        $.get( "/services/theme?name=" + themeName);
 	    	});
 		});
 	});
